@@ -13,8 +13,15 @@ public class MenuPage {
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         int x = (screenSize.width - frame.getWidth()) /2;
         int y = (screenSize.height - frame.getHeight())/2;
-        frame.setLocation(x, y);
-        frame.setLayout(null);
-        frame.setVisible(true);
+        if (name.equals("admin")) {
+            frame.dispose();
+            AdminPanel adminPanel = new AdminPanel(); 
+            adminPanel.setVisible(true);
+        } else {
+            frame.setLocation(x, y);
+            frame.setLayout(null);
+            frame.setResizable(false);
+            frame.setVisible(true);
+        }
     }
 }
