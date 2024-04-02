@@ -1,8 +1,10 @@
 import javax.swing.*;
+import javax.tools.Tool;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.HashMap;
+
 public class LoginPage implements ActionListener {
     JFrame frame = new JFrame();
     JButton loginButton = new JButton("Login");
@@ -41,11 +43,16 @@ public class LoginPage implements ActionListener {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         frame.setSize(460,430);
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        int x = (screenSize.width - frame.getWidth()) /2;
+        int y = (screenSize.height - frame.getHeight())/2;
+        frame.setLocation(x, y);
         frame.setLayout(null);
         frame.setResizable(false);
         frame.setVisible(true);
 
     }
+
     @Override
     public void actionPerformed(ActionEvent e) {
     if(e.getSource() == resetButton){
@@ -59,7 +66,8 @@ public class LoginPage implements ActionListener {
           if(loginInfo.get(userID).equals(password)){
               messageLabel.setForeground(Color.green);
               messageLabel.setText("Login successfull");
-              WelcomePage welcomePage = new WelcomePage();
+              frame.dispose();
+              MenuPage welcomePage = new MenuPage(userID);
           }else{
               messageLabel.setForeground(Color.red);
               messageLabel.setText("Wrong password");
