@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.HashMap;
 
 public class AdminPanel extends JPanel {
     JFrame frame = new JFrame();
@@ -53,12 +54,20 @@ public class AdminPanel extends JPanel {
         int y = (screenSize.height - frame.getHeight())/2;
         frame.setLocation(x, y);
         //Wykonac obsluge zdarzen
-    //tutaj dodac powrot do menu
-//        addBackButton.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//            MenuPage menuPage = new MenuPage(null);
-//            }
-//        });
+        //tutaj dodac powrot do menu
+        addBackButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(e.getSource() == addBackButton) {
+                    frame.getContentPane().removeAll();
+                    HashMap<String,String> loginInfo = new HashMap<>();
+        LoginPage loginPage = new LoginPage(loginInfo);
+                    frame.getContentPane().add(loginPage);
+                    frame.revalidate();
+                    frame.repaint();
+                    frame.dispose();
+                }
+            }
+        });
     }
 }
