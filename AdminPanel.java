@@ -15,7 +15,6 @@ public class AdminPanel extends JPanel {
     JTextField bookIdField = new JTextField();
     JTextField bookTitleField = new JTextField();
     JTextField bookAuthorField = new JTextField();
-
     AdminPanel(){
         JLabel adminMenuLabel = new JLabel("Welcome to Admin Panel");
         adminMenuLabel.setBounds(20,10,400,50);
@@ -27,11 +26,13 @@ public class AdminPanel extends JPanel {
         bookIdField.setBounds(125,100,25,25);
         bookTitleField.setBounds(125,150,200,25);
         bookAuthorField.setBounds(125,200,200,25);
-        addBookButton.setBounds(125,250,100,25);
+
+
+        addBookButton.setBounds(50,250,100,25);
         addBookButton.setFocusable(false);
-        deleteBookButton.setBounds(225,250,100,25);
+        deleteBookButton.setBounds(150,250,100,25);
         deleteBookButton.setFocusable(false);
-        addBackButton.setBounds(325,250,100,25);
+        addBackButton.setBounds(250,250,100,25);
         addBackButton.setFocusable(false);
 
         frame.add(bookIdLabel);
@@ -53,8 +54,7 @@ public class AdminPanel extends JPanel {
         int x = (screenSize.width - frame.getWidth()) /2;
         int y = (screenSize.height - frame.getHeight())/2;
         frame.setLocation(x, y);
-        //Wykonac obsluge zdarzen
-        //tutaj dodac powrot do menu
+        //Back to the Login Page
         addBackButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -71,6 +71,4 @@ public class AdminPanel extends JPanel {
         });
     }
 }
-        });
-    }
-}
+
