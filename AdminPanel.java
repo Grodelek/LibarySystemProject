@@ -60,14 +60,17 @@ public class AdminPanel extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 if(e.getSource() == addBackButton) {
                     frame.getContentPane().removeAll();
-                    HashMap<String,String> loginInfo = new HashMap<>();
-        LoginPage loginPage = new LoginPage(loginInfo);
+                IdAndPasswords idAndPasswords = new IdAndPasswords();
+        LoginPage loginPage = new LoginPage(idAndPasswords.getLoginInfo());
                     frame.getContentPane().add(loginPage);
                     frame.revalidate();
                     frame.repaint();
                     frame.dispose();
                 }
             }
+        });
+    }
+}
         });
     }
 }
