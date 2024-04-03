@@ -5,7 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.HashMap;
 
-public class LoginPage implements ActionListener {
+public class LoginPage extends JPanel implements ActionListener {
     JFrame frame = new JFrame();
     JButton loginButton = new JButton("Login");
     JButton resetButton = new JButton("Reset");
@@ -52,7 +52,6 @@ public class LoginPage implements ActionListener {
         frame.setVisible(true);
 
     }
-
     @Override
     public void actionPerformed(ActionEvent e) {
     if(e.getSource() == resetButton){
