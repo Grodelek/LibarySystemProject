@@ -14,9 +14,9 @@ public class MenuPage {
         int x = (screenSize.width - frame.getWidth()) /2;
         int y = (screenSize.height - frame.getHeight())/2;
         if (name.equals("admin")) {
-            frame.dispose();
-            AdminPanel adminPanel = new AdminPanel(); 
-            adminPanel.setVisible(true);
+            frame.dispose(); // Zamknij bieżące okno
+            AdminPanel adminPanel = new AdminPanel(); // Utwórz nowy panel administratora
+            adminPanel.setVisible(true); // Wyświetl panel administratora
         } else {
             frame.setLocation(x, y);
             frame.setLayout(null);
@@ -25,3 +25,4 @@ public class MenuPage {
         }
     }
 }
+
