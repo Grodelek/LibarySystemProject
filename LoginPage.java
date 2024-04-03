@@ -79,4 +79,3 @@ public class LoginPage implements ActionListener {
     }
     }
 }
-
